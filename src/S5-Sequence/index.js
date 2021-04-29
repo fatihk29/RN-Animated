@@ -13,7 +13,7 @@ export default class animations extends Component {
     scaleAnimation: new Animated.Value(1),
   };
   handlePress = () => {
-    Animated.stagger(5000, [
+    Animated.sequence([
       Animated.timing(this.state.colorAnimation, {
         toValue: 1,
         duration: 500,
