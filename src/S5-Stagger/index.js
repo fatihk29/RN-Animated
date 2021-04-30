@@ -30,7 +30,7 @@ export default class animations extends Component {
   render() {
     const backgroundColorInterpolate = this.state.colorAnimation.interpolate({
       inputRange: [0, 1],
-      outputRange: ['rgb(255, 99, 71)', 'rgb(199, 71, 255)'],
+      outputRange: ['#A3007A', 'rgb(199, 71, 255)'],
     });
     const boxStyle = {
       backgroundColor: backgroundColorInterpolate,
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: 150,
     height: 150,
-    backgroundColor: 'tomato',
+    backgroundColor: '#A3007A',
     fontSize: 12,
   },
   text: {},

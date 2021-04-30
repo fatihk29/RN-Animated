@@ -12,7 +12,7 @@ export default class animations extends Component {
     colorAnimation: new Animated.Value(0),
     scaleAnimation: new Animated.Value(1),
   };
-  handlePress = () => {
+  onPress = () => {
     Animated.sequence([
       Animated.timing(this.state.colorAnimation, {
         toValue: 1,
@@ -38,7 +38,7 @@ export default class animations extends Component {
     };
     return (
       <View style={styles.container}>
-        <TouchableWithoutFeedback onPress={this.handlePress}>
+        <TouchableWithoutFeedback onPress={this.onPress}>
           <Animated.View style={[styles.box, boxStyle]}>
             <Animated.Text style={styles.text}>AAAAAAAAAAAAAA</Animated.Text>
           </Animated.View>
