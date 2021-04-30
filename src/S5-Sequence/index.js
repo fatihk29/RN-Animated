@@ -6,6 +6,7 @@ import {
   Animated,
   TouchableWithoutFeedback,
 } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class animations extends Component {
   state = {
@@ -30,17 +31,17 @@ export default class animations extends Component {
   render() {
     const backgroundColorInterpolate = this.state.colorAnimation.interpolate({
       inputRange: [0, 1],
-      outputRange: ['rgb(255, 99, 71)', 'rgb(199, 71, 255)'],
+      outputRange: ['#32CD32', '#C71585'],
     });
-    const boxStyle = {
+    const iconInterpolate = {
       backgroundColor: backgroundColorInterpolate,
       transform: [{scale: this.state.scaleAnimation}],
     };
     return (
       <View style={styles.container}>
         <TouchableWithoutFeedback onPress={this.onPress}>
-          <Animated.View style={[styles.box, boxStyle]}>
-            <Animated.Text style={styles.text}>AAAAAAAAAAAAAA</Animated.Text>
+          <Animated.View style={[styles.icon, iconInterpolate]}>
+            <Icon style={styles.text} size={25} name="music" />
           </Animated.View>
         </TouchableWithoutFeedback>
       </View>
@@ -54,12 +55,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  box: {
+  icon: {
     position: 'absolute',
-    width: 150,
-    height: 150,
+    width: 50,
+    height: 50,
     backgroundColor: 'tomato',
-    fontSize: 12,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 5,
   },
   text: {},
 });
