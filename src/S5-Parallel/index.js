@@ -6,7 +6,7 @@ import {
   Animated,
   TouchableWithoutFeedback,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import FAIcon from 'react-native-vector-icons/FontAwesome';
 
 export default class animations extends Component {
   state = {
@@ -40,8 +40,8 @@ export default class animations extends Component {
     return (
       <View style={styles.container}>
         <TouchableWithoutFeedback onPress={this.onPress}>
-          <Animated.View style={[styles.icon, iconInterpolate]}>
-            <Icon style={styles.text} size={25} name="music" />
+          <Animated.View style={[styles.iconContainer, iconInterpolate]}>
+            <FAIcon size={25} name="music" color="black" />
           </Animated.View>
         </TouchableWithoutFeedback>
       </View>
@@ -55,16 +55,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  icon: {
-    position: 'absolute',
+  iconContainer: {
     width: 50,
     height: 50,
-    backgroundColor: 'tomato',
+    borderRadius: 5,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 5,
   },
-  text: {},
 });
 
 AppRegistry.registerComponent('animations', () => animations);

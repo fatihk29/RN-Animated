@@ -63,7 +63,9 @@ export default class animations extends Component {
 
 // TouchableWithoutFeedback kullanma sebebimiz;
 // Touchablepacity deki gibi bir tiklanma hissi vermemesi
+//----
 
+// Internal Styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
