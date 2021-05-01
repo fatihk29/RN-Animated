@@ -41,7 +41,7 @@ export default class animations extends Component {
       <View style={styles.container}>
         <TouchableWithoutFeedback onPress={this.onPress}>
           <Animated.View style={[styles.icon, iconInterpolate]}>
-            <Icon style={styles.text} size={25} name="music" />
+            <Icon style={styles.text} size={iconInterpolate * 2} name="music" />
           </Animated.View>
         </TouchableWithoutFeedback>
       </View>
